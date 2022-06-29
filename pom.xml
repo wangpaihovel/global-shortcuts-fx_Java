@@ -7,11 +7,28 @@
 
     <groupId>org.wangpai.demo</groupId>
     <artifactId>global-shortcuts_Java</artifactId>
-    <version>0.0</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
+        <junit.version.custom>5.8.0-M1</junit.version.custom>
+        <lombok.version.custom>1.18.20</lombok.version.custom>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version.custom}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version.custom}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
