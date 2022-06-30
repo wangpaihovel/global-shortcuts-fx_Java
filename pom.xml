@@ -5,9 +5,9 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.wangpai.demo</groupId>
+    <groupId>org.wangpai.globalshortcuts</groupId>
     <artifactId>global-shortcuts_Java</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
