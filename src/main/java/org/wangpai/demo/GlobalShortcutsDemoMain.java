@@ -12,6 +12,11 @@ public class GlobalShortcutsDemoMain {
     }
 
     public static void main(String[] args) {
-        new GlobalShortcutsFX().execute(GlobalShortcutsDemoMain::customActivity);
+        new GlobalShortcutsFX()
+                .setCustomActivity(GlobalShortcutsDemoMain::customActivity)
+                .setCustomResume(() -> System.out.println("######## customActivity 恢复执行 ########"))
+                .setCustomSuspend(() -> System.out.println("######## customActivity 暂停执行 ########"))
+                .setCustomExit(() -> System.out.println("######## customActivity 终止执行 ########"))
+                .execute();
     }
 }
