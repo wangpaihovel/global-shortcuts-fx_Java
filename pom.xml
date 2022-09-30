@@ -7,14 +7,15 @@
 
     <groupId>org.wangpai.globalshortcuts</groupId>
     <artifactId>global-shortcuts_Java</artifactId>
-    <version>3.0</version>
+    <version>4.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <junit.version.custom>5.8.0-M1</junit.version.custom>
-        <lombok.version.custom>1.18.20</lombok.version.custom>
+        <junit.version.custom>5.9.0</junit.version.custom>
+        <lombok.version.custom>1.18.24</lombok.version.custom>
+        <apache-commons-collections4.version.custom>4.4</apache-commons-collections4.version.custom>
     </properties>
 
     <dependencies>
@@ -29,6 +30,13 @@
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version.custom}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- 提供类 DualHashBidiMap -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${apache-commons-collections4.version.custom}</version>
         </dependency>
     </dependencies>
 </project>
