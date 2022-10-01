@@ -6,37 +6,63 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.wangpai.globalshortcuts</groupId>
-    <artifactId>global-shortcuts_Java</artifactId>
-    <version>4.0</version>
+    <artifactId>global-shortcuts-fx</artifactId>
+    <packaging>pom</packaging>
+    <version>4.1</version>
+    <modules>
+        <module>jintellitype</module>
+        <module>global-shortcuts</module>
+        <module>global-shortcuts-demo</module>
+    </modules>
 
     <properties>
+        <!-- 不加此项，JavaFX 打包出来中文会乱码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
+        <!-- 凡是自定义的属性，都要加 .custom 后缀，以防与已有的预置属性相冲突 -->
+        <project.version.custom>4.1</project.version.custom>
 
         <junit.version.custom>5.9.0</junit.version.custom>
         <lombok.version.custom>1.18.24</lombok.version.custom>
         <apache-commons-collections4.version.custom>4.4</apache-commons-collections4.version.custom>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version.custom}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version.custom}</version>
-            <scope>test</scope>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.wangpai.globalshortcuts</groupId>
+                <artifactId>jintellitype</artifactId>
+                <version>${project.version.custom}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wangpai.globalshortcuts</groupId>
+                <artifactId>global-shortcuts</artifactId>
+                <version>${project.version.custom}</version>
+            </dependency>
 
-        <!-- 提供类 DualHashBidiMap -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>${apache-commons-collections4.version.custom}</version>
-        </dependency>
-    </dependencies>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version.custom}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version.custom}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- 提供类 DualHashBidiMap -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${apache-commons-collections4.version.custom}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>

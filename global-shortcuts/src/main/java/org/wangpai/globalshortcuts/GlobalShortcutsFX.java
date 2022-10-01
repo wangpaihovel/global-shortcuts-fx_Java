@@ -341,18 +341,6 @@ public class GlobalShortcutsFX {
             var oneOfLifecycle = this.idOfLifecycles.getKey(id);
             var shortcut = this.lifecycleBindShortcut.get(oneOfLifecycle);
             return this.shortcutBindLifecycle.get(shortcut);
-
-            // 使用如下注释代码也可以
-//            // 根据 lifecycle 查找对应的快捷键
-//            var shortcut = this.lifecycleBindShortcut.get(oneOfLifecycle);
-//            var result = new HashSet<GlobalShortcutsLifecycle>();
-//            // 收集有相同快捷键的 lifecycle
-//            for (var pair : this.lifecycleBindShortcut.entrySet()) {
-//                if (pair.getValue().equals(shortcut)) {
-//                    result.add(pair.getKey());
-//                }
-//            }
-//            return result;
         }
 
         /**
@@ -403,14 +391,6 @@ public class GlobalShortcutsFX {
             } else {
                 return true;
             }
-
-            // 使用如下注释代码也可以
-//            for (var pair : this.lifecycleBindShortcut.entrySet()) {
-//                if (pair.getValue().equals(shortcut)) {
-//                    return true;
-//                }
-//            }
-//            return false;
         }
 
         /**
